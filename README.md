@@ -2,7 +2,7 @@
 B cell sequencing
 # Set up files buffering in and out folders
 ```
-mkdir data/
+mkdir data
 mkdir figs
 mkdir result
 mv seq-data data/
