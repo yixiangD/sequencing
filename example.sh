@@ -1,6 +1,6 @@
-fd_name="data/drive-download-20230530T162830Z-001"
-out="20230530T162830Z-001"
-mixcr analyze milab-human-bcr-multiplex-cdr3 \
-$fd_name/LIB058683_GEN00257672_M2-CD21lo-HC_S8_L001_R1_001.fastq.gz \
-$fd_name/LIB058683_GEN00257672_M2-CD21lo-HC_S8_L001_R2_001.fastq.gz \
+fd_name="data/all_data"
+out="test2"
+mixcr analyze rnaseq-bcr-full-length --species mouse \
+$fd_name/LIB058683_GEN00257658_day0-HC_S1_L001_R1_001.fastq.gz \
+$fd_name/LIB058683_GEN00257658_day0-HC_S1_L001_R2_001.fastq.gz \
 result/$out
