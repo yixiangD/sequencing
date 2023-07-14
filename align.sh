@@ -7,3 +7,6 @@ mixcr analyze rnaseq-bcr-full-length --species mouse \
 mixcr exportQc align \
     result/${out}.contigs.clns \
     figs/alignQc.pdf
+mixcr exportQc chainUsage \
+    result/${out}.contigs.clns \
+    figs/chainUsage.pdf
