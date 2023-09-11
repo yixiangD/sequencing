@@ -40,13 +40,17 @@ my.pal <- c(
 fig <-
   ggplot2::ggplot(df1, ggplot2::aes(x = pop, y = norm.freq, fill = ig)) +
   ggplot2::geom_bar(stat = "identity", colour = "black") +
+  ggplot2::scale_y_continuous(expand = c(0, 0)) +
   ggplot2::labs(x = "Subset", y = "Frequency", fill = "Isotype") +
-  # ggplot2::scale_x_discrete(labels = x.order) +
+  ggplot2::theme(
+    axis.title = ggplot2::element_text(size = 16),
+    axis.text = ggplot2::element_text(size = 16)
+  ) +
   ggplot2::theme_classic() +
   ggplot2::scale_fill_manual(values = my.pal)
 print(fig)
 fig.fname <- paste(outdir, "global.pdf", sep = "/")
-ggplot2::ggsave(fig.fname, fig, width = 5, height = 6)
+ggplot2::ggsave(fig.fname, fig, width = 4, height = 4)
 
 # per mouse
 df.mice <-
@@ -58,10 +62,16 @@ fig <-
   ggplot2::ggplot(df2, ggplot2::aes(x = pop, y = norm.freq, fill = ig)) +
   ggplot2::geom_bar(stat = "identity", colour = "black") +
   ggplot2::labs(x = "Subset", y = "Frequency", fill = "Isotype") +
-  # ggplot2::scale_x_discrete(labels = x.order) +
-  ggplot2::theme_classic() +
+  ggplot2::scale_y_continuous(expand = c(0, 0)) +
+  ggplot2::theme_classic() + 
+  ggplot2::theme(
+    axis.title = ggplot2::element_text(size = 16),
+    axis.text = ggplot2::element_text(size = 16), 
+    strip.text.x = ggplot2::element_text(size = 16)
+  ) +
   ggplot2::facet_grid( ~ mice) +
   ggplot2::scale_fill_manual(values = my.pal)
 print(fig)
 fig.fname <- paste(outdir, "per_mice.pdf", sep = "/")
-ggplot2::ggsave(fig.fname, fig, width = 12, height = 5)
+ggplot2::ggsave(fig.fname, fig, width = 15, height = 5)
+
