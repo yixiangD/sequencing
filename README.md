@@ -1,5 +1,5 @@
 # Motivation
-B cell sequencing
+BRC sequencing
 # Set up files buffering in and out folders
 ```
 mkdir data
